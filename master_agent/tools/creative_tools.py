@@ -10,7 +10,7 @@ from ..utils.state_manager import workflow_state
 from ..utils.file_utils import ensure_directory_exists, clean_filename
 from ..config.settings import (
     GENERATED_CREATIVES_DIR,
-    MODEL_NAME,
+    IMAGE_GENERATION_MODEL,
     DEFAULT_IMAGE_STYLE,
     DEFAULT_CREATIVE_TYPE,
     MAX_RETRIES,
@@ -87,15 +87,9 @@ def generate_ai_creative(content: str, creative_type: str = DEFAULT_CREATIVE_TYP
                     if retry > 0:
                         time.sleep(RETRY_DELAY)
                     
-                    # Attempt image generation
-                    # Note: This is a placeholder. You may need to use:
-                    # - Google's Imagen API
-                    # - DALL-E API
-                    # - Stable Diffusion API
-                    # - Or another image generation service
-                    
+                    # Generate image using Gemini 2.5 Flash Image Preview model
                     response = client.models.generate_content(
-                        model=MODEL_NAME,
+                        model=IMAGE_GENERATION_MODEL,
                         contents=image_prompt,
                     )
                     

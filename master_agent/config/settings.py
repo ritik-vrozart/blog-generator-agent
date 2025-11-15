@@ -2,6 +2,7 @@
 
 # Model configuration
 MODEL_NAME = 'gemini-2.5-flash'
+IMAGE_GENERATION_MODEL = 'gemini-2.5-flash-image-preview'  # Model for AI creative generation
 
 # Directory configuration
 GENERATED_CREATIVES_DIR = "generated_creatives"
